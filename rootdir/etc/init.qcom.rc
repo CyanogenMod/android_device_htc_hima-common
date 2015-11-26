@@ -167,8 +167,13 @@ on boot
     mkdir /dev/socket/qmux_nfc 0770 nfc nfc
     mkdir /dev/socket/qmux_radio 0770 radio radio
 
+    # Bluetooth
+    chown bluetooth net_bt_stack /proc/bluetooth/sleep/btwrite
+    chown bluetooth net_bt_stack /proc/bluetooth/sleep/lpm
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/state
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/type
+    chmod 0644 /proc/bluetooth/sleep/btwrite
+    chmod 0644 /proc/bluetooth/sleep/lpm
     chmod 0660 /sys/class/rfkill/rfkill0/state
     chmod 0660 /sys/class/rfkill/rfkill0/type
 
