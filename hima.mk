@@ -85,6 +85,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/audio/mixer_paths.xml:system/etc/mixer_paths.xml
 
+# Camera
+PRODUCT_PACKAGES += \
+    libcamera_shim
+
 # Compat symbols
 PRODUCT_PACKAGES += \
     libstlport
@@ -206,6 +210,10 @@ PRODUCT_COPY_FILES += \
 # Recovery
 PRODUCT_PACKAGES += \
     librecovery_updater_hima
+
+# RIL
+PRODUCT_PACKAGES += \
+    libril_shim
 
 # Sensors
 PRODUCT_COPY_FILES += \
